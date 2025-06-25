@@ -1,5 +1,4 @@
 import privateClient from "../client/private.client";
-import publicClient from "../client/public.client";
 
 const userEndpoints = {
   signin: "user/signin",
@@ -11,7 +10,7 @@ const userEndpoints = {
 const userApi = {
   signin: async ({ username, password }) => {
     try {
-      const response = await publicClient.post(userEndpoints.signin, {
+      const response = await privateClient.post(userEndpoints.signin, {
         username,
         password,
       });
